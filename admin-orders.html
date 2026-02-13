@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Dashboard - Triton Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    <style>
+        .admin-container {
+            max-width: 1600px;
+            margin: 120px auto 60px;
+            padding: 2rem;
+        }
+        
+        .admin-header {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .admin-header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .admin-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-card.pending-highlight {
+            border: 3px solid #ff9800;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+        }
+        
+        .stat-card.pending-highlight .stat-value {
+            color: #f57c00;
+            font-size: 3rem;
+        }
+        
+        .orders-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--neutral-beige);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--primary-navy);
+            margin: 0;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .refresh-btn, .download-master-btn {
+            background: var(--accent-gold);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .refresh-btn:hover, .download-master-btn:hover {
+            background: var(--primary-navy);
+            transform: translateY(-2px);
+        }
+        
+        .download-master-btn {
+            background: #28a745;
+        }
+        
+        .download-master-btn:hover {
+            background: #218838;
+        }
+        
+        /* Pending Orders Grid */
+        .pending-orders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .order-card {
+            background: white;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .order-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+        }
+        
+        .order-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--neutral-beige);
+        }
+        
+        .order-number-large {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+        
+        .order-time {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .order-customer {
+            margin-bottom: 1rem;
+        }
+        
+        .order-customer h4 {
+            font-size: 1.1rem;
+            margin: 0 0 0.3rem 0;
+            color: var(--primary-navy);
+        }
+        
+        .order-customer p {
+            margin: 0.2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .order-type-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+        
+        .order-type-dine-in {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .order-type-takeaway {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .order-type-delivery {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .order-items {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--neutral-cream);
+            border-radius: 4px;
+        }
+        
+        .order-items h5 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-navy);
+            font-size: 1rem;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .order-item-name {
+            flex: 1;
+        }
+        
+        .order-item-qty {
+            color: var(--text-secondary);
+            margin: 0 0.5rem;
+        }
+        
+        .order-total-large {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #28a745;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .finish-btn {
+            width: 100%;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .finish-btn:hover {
+            background: #218838;
+            transform: scale(1.02);
+        }
+        
+        .finish-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .special-instructions {
+            background: #fff3e0;
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .special-instructions h5 {
+            margin: 0 0 0.3rem 0;
+            color: #f57c00;
+            font-size: 0.9rem;
+        }
+        
+        .special-instructions p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .no-orders {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+        
+        .no-orders-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Completed animation */
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+        }
+        
+        .order-card.completing {
+            animation: slideOut 0.5s ease forwards;
+        }
+        
+        @media (max-width: 1024px) {
+            .pending-orders-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .admin-container {
+                margin-top: 100px;
+                padding: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pending-orders-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Triton Logo" class="logo-img">
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu-with-cart.html" class="nav-link">Menu</a></li>
+                <li><a href="admin-orders.html" class="nav-link active">Kitchen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <!-- Header -->
+        <div class="admin-header">
+            <h1>Kitchen Dashboard</h1>
+            <p>Manage current orders and track daily performance</p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card pending-highlight">
+                <div class="stat-icon"></div>
+                <div class="stat-value" id="pendingOrders">0</div>
+                <div class="stat-label">Pending Orders</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"></div>
+                <div class="stat-value" id="totalOrders">0</div>
+                <div class="stat-label">Total Orders</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"></div>
+                <div class="stat-value" id="todayOrders">0</div>
+                <div class="stat-label">Today's Orders</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"></div>
+                <div class="stat-value" id="totalRevenue">₹0</div>
+                <div class="stat-label">Total Revenue</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"></div>
+                <div class="stat-value" id="todayRevenue">₹0</div>
+                <div class="stat-label">Today's Revenue</div>
+            </div>
+        </div>
+
+        <!-- Pending Orders Section -->
+        <div class="orders-section">
+            <div class="section-header">
+                <h2>🔔 Current Orders (Pending)</h2>
+                <div class="header-buttons">
+                    <button class="download-master-btn" onclick="downloadMasterFile()">📥 Download All Orders</button>
+                    <button class="refresh-btn" onclick="loadOrders()">🔄 Refresh</button>
+                </div>
+            </div>
+            
+            <div id="pendingOrdersContainer">
+                <div class="loading">Loading pending orders...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Auto-refresh more frequently (every 10 seconds for kitchen)
+        let refreshInterval;
+
+        // Load orders on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOrders();
+            // Set up auto-refresh
+            refreshInterval = setInterval(loadOrders, 10000); // Every 10 seconds
+        });
+
+        async function loadOrders() {
+            const container = document.getElementById('pendingOrdersContainer');
+
+            try {
+                // Fetch statistics
+                const statsResponse = await fetch('/api/stats');
+                const stats = await statsResponse.json();
+
+                // Update statistics cards
+                document.getElementById('pendingOrders').textContent = stats.pendingOrdersCount || 0;
+                document.getElementById('totalOrders').textContent = stats.totalOrders;
+                document.getElementById('todayOrders').textContent = stats.todayOrders;
+                document.getElementById('totalRevenue').textContent = '₹' + stats.totalRevenue.toLocaleString('en-IN');
+                document.getElementById('todayRevenue').textContent = '₹' + stats.todayRevenue.toLocaleString('en-IN');
+
+                // Fetch pending orders
+                const ordersResponse = await fetch('/api/pending-orders');
+                const pendingOrders = await ordersResponse.json();
+
+                if (pendingOrders.length === 0) {
+                    container.innerHTML = `
+                        <div class="no-orders">
+                            <div class="no-orders-icon">✅</div>
+                            <h3>All Caught Up!</h3>
+                            <p>No pending orders at the moment</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Display pending orders as cards
+                container.innerHTML = `
+                    <div class="pending-orders-grid">
+                        ${pendingOrders.map(order => `
+                            <div class="order-card" id="order-${order.orderNumber}">
+                                <div class="order-card-header">
+                                    <div class="order-number-large">${order.orderNumber}</div>
+                                    <div class="order-time">${order.date}</div>
+                                </div>
+                                
+                                <div class="order-customer">
+                                    <h4>${order.customerName}</h4>
+                                    <p>📞 ${order.phone}</p>
+                                    ${order.email !== 'N/A' ? `<p>✉️ ${order.email}</p>` : ''}
+                                    <span class="order-type-badge order-type-${order.orderType}">
+                                        ${order.orderType}
+                                    </span>
+                                </div>
+                                
+                                ${order.orderType === 'delivery' && order.deliveryAddress !== 'N/A' ? `
+                                    <div class="special-instructions">
+                                        <h5>📍 Delivery Address</h5>
+                                        <p>${order.deliveryAddress}</p>
+                                    </div>
+                                ` : ''}
+                                
+                                <div class="order-items">
+                                    <h5>📋 Items:</h5>
+                                    ${order.items.map(item => `
+                                        <div class="order-item">
+                                            <span class="order-item-name">${item['Item Name']}</span>
+                                            <span class="order-item-qty">× ${item.Quantity}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                
+                                ${order.specialInstructions !== 'None' ? `
+                                    <div class="special-instructions">
+                                        <h5>⚠️ Special Instructions</h5>
+                                        <p>${order.specialInstructions}</p>
+                                    </div>
+                                ` : ''}
+                                
+                                <div class="order-total-large">₹${order.total.toLocaleString('en-IN')}</div>
+                                
+                                <button class="finish-btn" onclick="finishOrder('${order.orderNumber}')">
+                                    ✓ Mark as Finished
+                                </button>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error('Error loading orders:', error);
+                container.innerHTML = `
+                    <div class="no-orders">
+                        <h3>❌ Error loading orders</h3>
+                        <p>Please make sure the server is running on port 3000</p>
+                        <button class="refresh-btn" onclick="loadOrders()" style="margin-top: 1rem;">Try Again</button>
+                    </div>
+                `;
+            }
+        }
+
+        async function finishOrder(orderNumber) {
+            if (!confirm(`Mark order ${orderNumber} as finished?`)) {
+                return;
+            }
+
+            try {
+                const orderCard = document.getElementById(`order-${orderNumber}`);
+                orderCard.classList.add('completing');
+
+                const response = await fetch('/api/finish-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ orderNumber })
+                });
+
+                if (response.ok) {
+                    // Wait for animation to complete
+                    setTimeout(() => {
+                        loadOrders(); // Reload to update UI
+                    }, 500);
+                } else {
+                    alert('Failed to mark order as finished');
+                    orderCard.classList.remove('completing');
+                }
+            } catch (error) {
+                console.error('Error finishing order:', error);
+                alert('Error finishing order');
+            }
+        }
+
+        function downloadMasterFile() {
+            window.location.href = '/api/download-orders';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Triton Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Triton Logo" class="logo-img">
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1 class="page-title">Our Menu</h1>
+            <p class="page-subtitle">A culinary journey across continents</p>
+        </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <div class="menu-nav-container">
+        <div class="container">
+            <nav class="menu-nav">
+                <button class="menu-nav-btn active" data-category="all">All</button>
+                <button class="menu-nav-btn" data-category="beverages">Beverages</button>
+                <button class="menu-nav-btn" data-category="soups-salads">Soups & Salads</button>
+                <button class="menu-nav-btn" data-category="poee">Poee & Sandwiches</button>
+                <button class="menu-nav-btn" data-category="appetizers">Appetizers</button>
+                <button class="menu-nav-btn" data-category="pizza">Pizza</button>
+                <button class="menu-nav-btn" data-category="pasta">Pasta & Risotto</button>
+                <button class="menu-nav-btn" data-category="indian">Indian Main Course</button>
+                <button class="menu-nav-btn" data-category="biryani">Biryani & Rice</button>
+                <button class="menu-nav-btn" data-category="asian">Asian</button>
+                <button class="menu-nav-btn" data-category="desserts">Desserts</button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            
+            <!-- Beverages -->
+            <div class="menu-category" data-category="beverages">
+                <h2 class="category-title">Beverages</h2>
+                
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Coffee Classics <span>(Hot / Iced)</span></h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Espresso</h4>
+                                <span class="price">₹130</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Americano</h4>
+                                <span class="price">₹180</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Doppio</h4>
+                                <span class="price">₹190</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Cappuccino</h4>
+                                <span class="price">₹200</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Latte</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Mocha</h4>
+                                <span class="price">₹230</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Coffee Delights <span>(Hot / Iced)</span></h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Clove and Vanilla Coffee</h4>
+                                <span class="price">₹250</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Coconut Caramel Cappuccino</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Mandarin Affogato</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Coconut Caramel Latte</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Kulfi Affogato</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Cinnamon Mocha</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Vanilla Matcha Latte</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Rose Matcha Latte</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Tea <span>(Hot / Iced)</span></h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Lemon</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Peach</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Hibiscus</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Lemongrass</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Blue Pea</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Orange Blossom</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Lychee Rose Iced Tea</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Hot Chocolate</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Classic Hot Chocolate</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Hazelnut Hot Chocolate</h4>
+                                <span class="price">₹330</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Tiramisu Hot Chocolate</h4>
+                                <span class="price">₹330</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Cinnamon Hot Chocolate</h4>
+                                <span class="price">₹330</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Milkshakes</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Cookie Caramel Shake</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Chocolate Shake</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Peanut Butter Shake</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Black Sesame Milkshake</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Brownie Shake</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Strawberry Cheesecake Milkshake</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Blueberry Almond Milkshake</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Biscoff Butterscotch Crunch</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Roasted White Chocolate Almond Milkshake</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Choco Berry Shake</h4>
+                                <span class="price">₹330</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>White Chocolate Matcha Frappe</h4>
+                                <span class="price">₹330</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">House Refreshments</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Jaljeera Mojito</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Basil Nimbu Pani</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Cranberry Sunrise</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Sunset Cooler</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Watermelon Cooler</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Paan Mojito</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Spiced Pina Colada</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Tamarind Masala Cola</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Spiced Pomegranate Mule</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Rose and Cardamom Lassi</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soups & Salads -->
+            <div class="menu-category" data-category="soups-salads">
+                <h2 class="category-title">Fresh Soups & Salads</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Thai Clear Soup</h4>
+                            <span class="price">₹390</span>
+                        </div>
+                        <p class="item-description">Light, aromatic broth with fresh herbs</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tadka Broccoli Soup</h4>
+                            <span class="price">₹390</span>
+                        </div>
+                        <p class="item-description">Broccoli soup topped with tempering</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Fungi Cappuccino Soup</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Earthy truffle, creamy mushroom soup fusion</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Lebanese Fattoush Salad</h4>
+                            <span class="price">₹430</span>
+                        </div>
+                        <p class="item-description">Crunchy salad with tangy lemon and herbs</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Guacy Crunch Salad</h4>
+                            <span class="price">₹450</span>
+                        </div>
+                        <p class="item-description">Crispy bites topped with creamy guacamole</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poee Pockets & Sandwiches -->
+            <div class="menu-category" data-category="poee">
+                <h2 class="category-title">Poee Pocket & Sandwiches</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Falafel Hummus Poee Pocket</h4>
+                            <span class="price">₹530</span>
+                        </div>
+                        <p class="item-description">Crunchy falafel with creamy hummus in poee</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Hara Bhara Kebab Poee Pocket</h4>
+                            <span class="price">₹530</span>
+                        </div>
+                        <p class="item-description">Spiced veggie kebab with fresh veggies in poee</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tempura Veggie Bao</h4>
+                            <span class="price">₹590</span>
+                        </div>
+                        <p class="item-description">Crispy battered vegetables in a bao</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Chilli Paneer Bao</h4>
+                            <span class="price">₹590</span>
+                        </div>
+                        <p class="item-description">Bao stuffed with spicy cottage cheese</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Kashmiri Grilled Cheese Poee Pocket</h4>
+                            <span class="price">₹610</span>
+                        </div>
+                        <p class="item-description">Grilled cheese with Kashmiri spice in poee</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tandoori Paneer Poee Pocket</h4>
+                            <span class="price">₹610</span>
+                        </div>
+                        <p class="item-description">Smoky paneer, tangy yogurt in soft poee</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Caprese Sandwich Poee Pocket</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Fresh tomatoes, basil, mozzarella in poee</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appetizers -->
+            <div class="menu-category" data-category="appetizers">
+                <h2 class="category-title">Appetizers</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Pudina Hummus</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Minty hummus served with crispy crackers</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Masala Focaccia with Garlic Marinara</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Spicy focaccia with garlicky marinara sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Cream Cheese Samosa</h4>
+                            <span class="price">₹450</span>
+                        </div>
+                        <p class="item-description">Crispy samosas filled with cream cheese and herbs</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Paneer Tikka (Angara/Lassoni/Malai)</h4>
+                            <span class="price">₹450</span>
+                        </div>
+                        <p class="item-description">Grilled, spiced paneer with smoky flavour</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Boondi Crusted Broccoli</h4>
+                            <span class="price">₹450</span>
+                        </div>
+                        <p class="item-description">Tandoori broccoli coated with crispy boondi</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Palak Patta Chaat</h4>
+                            <span class="price">₹470</span>
+                        </div>
+                        <p class="item-description">Crisp spinach leaves served with tangy chutneys</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anglo-Indian Viennoiserie -->
+            <div class="menu-category" data-category="appetizers">
+                <h2 class="category-title">Anglo-Indian Viennoiserie</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Sundried Tomato and Cream Cheese Puff</h4>
+                            <span class="price">₹470</span>
+                        </div>
+                        <p class="item-description">Flaky puff filled with cream cheese and sun-dried tomatoes</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Peppery Paneer Puff</h4>
+                            <span class="price">₹470</span>
+                        </div>
+                        <p class="item-description">Paneer and pepper stuffed in crispy puff pastry</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Creamy Mushroom Puff</h4>
+                            <span class="price">₹470</span>
+                        </div>
+                        <p class="item-description">Savory mushroom filling in a delicate puff</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Cheesy Naan Bites with Mint Mayo</h4>
+                            <span class="price">₹540</span>
+                        </div>
+                        <p class="item-description">Soft naan bites filled with cheese served with mint mayo</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tandoori Sliders with Dal Makhani Dip</h4>
+                            <span class="price">₹540</span>
+                        </div>
+                        <p class="item-description">Mini sliders with smoky paneer and dal dip</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Adana Kebab</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Spicy vegetable kebab, served with aromatic spices</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tikka Masala Cheese Fondue</h4>
+                            <span class="price">₹670</span>
+                        </div>
+                        <p class="item-description">Melted cheese with tikka masala sauce dip</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Classic Bhurji with Bread Box</h4>
+                            <span class="price">₹670</span>
+                        </div>
+                        <p class="item-description">Scrambled paneer bhurji served with assorted bread</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pizza -->
+            <div class="menu-category" data-category="pizza">
+                <h2 class="category-title">Neapolitan Style Pizza</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Classic Margherita</h4>
+                            <span class="price">₹850</span>
+                        </div>
+                        <p class="item-description">Classic with fresh tomatoes, mozzarella, and basil</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Farm Fresh</h4>
+                            <span class="price">₹910</span>
+                        </div>
+                        <p class="item-description">Fresh veggies, cheese, and herbs on pizza</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Spinach, Feta, and Caramelized Onion</h4>
+                            <span class="price">₹910</span>
+                        </div>
+                        <p class="item-description">Spinach, feta, onions on a crisp pizza crust</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Pesto</h4>
+                            <span class="price">₹1050</span>
+                        </div>
+                        <p class="item-description">Truffle oil, pesto, cheese on wood-fired pizza</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Lotus Stem Alfredo</h4>
+                            <span class="price">₹1050</span>
+                        </div>
+                        <p class="item-description">Lotus stem with creamy alfredo sauce on pizza</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Angry Indian</h4>
+                            <span class="price">₹1050</span>
+                        </div>
+                        <p class="item-description">Spicy, flavourful pizza with Indian-inspired toppings</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Italiana</h4>
+                            <span class="price">₹1050</span>
+                        </div>
+                        <p class="item-description">Fresh mozzarella, basil, and tangy sauce on pizza</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasta & Risotto -->
+            <div class="menu-category" data-category="pasta">
+                <h2 class="category-title">Pasta & Risotto</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Makhani Ravioli</h4>
+                            <span class="price">₹510</span>
+                        </div>
+                        <p class="item-description">Ravioli in rich, buttery makhani sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Alfredo Spaghetti</h4>
+                            <span class="price">₹590</span>
+                        </div>
+                        <p class="item-description">Creamy alfredo sauce with perfectly cooked spaghetti</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Penne Masala Mafia</h4>
+                            <span class="price">₹590</span>
+                        </div>
+                        <p class="item-description">Penne pasta in spicy, tangy masala sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Spinach and Cottage Cheese Tortellini</h4>
+                            <span class="price">₹590</span>
+                        </div>
+                        <p class="item-description">Spinach, cottage cheese-filled tortellini in creamy sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Creamy Marinara Fettuccine</h4>
+                            <span class="price">₹590</span>
+                        </div>
+                        <p class="item-description">Fettuccine pasta with rich, creamy marinara sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Ravioli in Mushroom Cream Sauce</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Truffle-infused ravioli in rich mushroom sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Pesto Risotto</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Arborio rice cooked with fragrant pesto sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Burrata Aglio e Olio</h4>
+                            <span class="price">₹690</span>
+                        </div>
+                        <p class="item-description">Burrata cheese in a light garlic olive oil sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Ratatouille Lasagna</h4>
+                            <span class="price">₹690</span>
+                        </div>
+                        <p class="item-description">Layered vegetables in a comforting lasagna</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Risotto</h4>
+                            <span class="price">₹730</span>
+                        </div>
+                        <p class="item-description">Creamy risotto with aromatic truffle oil</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stone Bowls -->
+            <div class="menu-category" data-category="indian">
+                <h2 class="category-title">Stone Bowls</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Anglo Indian Curry with Tamarind Rice</h4>
+                            <span class="price">₹630</span>
+                        </div>
+                        <p class="item-description">Flavourful curry with fragrant rice</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Xacuti Curry with Tamarind Rice</h4>
+                            <span class="price">₹630</span>
+                        </div>
+                        <p class="item-description">Spicy curry with vegetables and rice</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Goan Veg Curry with Tamarind Rice</h4>
+                            <span class="price">₹630</span>
+                        </div>
+                        <p class="item-description">Traditional Goan-style curry with mixed veggies</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Thai Curry with Jasmine Rice</h4>
+                            <span class="price">₹630</span>
+                        </div>
+                        <p class="item-description">Fragrant Thai curry served with jasmine rice</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Burrata Black Dal with Jeera Rice</h4>
+                            <span class="price">₹630</span>
+                        </div>
+                        <p class="item-description">Creamy black dal with rich burrata cheese</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indian Main Course -->
+            <div class="menu-category" data-category="indian">
+                <h2 class="category-title">Indian Main Course</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Lasooni Palak Paneer</h4>
+                            <span class="price">₹390</span>
+                        </div>
+                        <p class="item-description">Garlic-infused spinach paneer curry</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Paneer Makhanwala</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Rich, creamy paneer in makhani gravy</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Bharwan Mirchi</h4>
+                            <span class="price">₹430</span>
+                        </div>
+                        <p class="item-description">Stuffed, spicy green chillies in a tangy sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Mewa Malai Kofta</h4>
+                            <span class="price">₹430</span>
+                        </div>
+                        <p class="item-description">Creamy gravy with spiced vegetable kofta</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Makhmali Subzi</h4>
+                            <span class="price">₹430</span>
+                        </div>
+                        <p class="item-description">Soft, mild vegetable curry in a creamy gravy</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Subz Nizami Handi</h4>
+                            <span class="price">₹430</span>
+                        </div>
+                        <p class="item-description">Mixed vegetables cooked in aromatic spices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biryani & Dal -->
+            <div class="menu-category" data-category="biryani">
+                <h2 class="category-title">Biryani</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Subz Biryani</h4>
+                            <span class="price">₹790</span>
+                        </div>
+                        <p class="item-description">Flavourful vegetable biryani with aromatic spices</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Paneer Tikka Biryani</h4>
+                            <span class="price">₹790</span>
+                        </div>
+                        <p class="item-description">Paneer-tikka flavoured vegetable biryani</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Hyderabadi Biryani</h4>
+                            <span class="price">₹790</span>
+                        </div>
+                        <p class="item-description">Classic Hyderabadi-style biryani with fragrant spices</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tagine Rice</h4>
+                            <span class="price">₹790</span>
+                        </div>
+                        <p class="item-description">Moroccan-style vegetable stew served with rice</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Mandi Rice</h4>
+                            <span class="price">₹850</span>
+                        </div>
+                        <p class="item-description">Aromatic rice cooked with spices and herbs</p>
+                    </div>
+                </div>
+
+                <h2 class="category-title">Dal</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Double Tadka Dal</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Dal tempered twice with mustard, garlic, and spices</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Makhani Dal</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Creamy dal cooked in rich makhani gravy</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Bhagwani Dal</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Traditional spiced dal with fragrant tempering</p>
+                    </div>
+                </div>
+
+                <h2 class="category-title">Rice</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Steamed Rice</h4>
+                            <span class="price">₹310</span>
+                        </div>
+                        <p class="item-description">Soft, fluffy basmati rice served plain</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Jeera Rice</h4>
+                            <span class="price">₹350</span>
+                        </div>
+                        <p class="item-description">Aromatic cumin-infused basmati rice</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Saffron Pulao</h4>
+                            <span class="price">₹510</span>
+                        </div>
+                        <p class="item-description">Fragrant saffron rice with a hint of spice</p>
+                    </div>
+                </div>
+
+                <h2 class="category-title">Breads</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Naan (Plain/Butter/Garlic)</h4>
+                            <span class="price">₹110/130/130</span>
+                        </div>
+                        <p class="item-description">Soft, fluffy naan served plain, with butter or garlic</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tandoori Roti (Plain/Butter/Garlic)</h4>
+                            <span class="price">₹110/130/130</span>
+                        </div>
+                        <p class="item-description">Warm, crispy roti, served plain, with butter or garlic</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Lachcha Paratha (Plain/Butter/Garlic)</h4>
+                            <span class="price">₹110/130/130</span>
+                        </div>
+                        <p class="item-description">Layered flatbread served plain, with butter or garlic</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Sourdough Roti (Plain/Butter)</h4>
+                            <span class="price">₹110/130</span>
+                        </div>
+                        <p class="item-description">Tangy, crispy roti made with sourdough, served plain or with butter</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Stuffed Kulcha (Cheese/Onion/Aloo)</h4>
+                            <span class="price">₹130/150/150</span>
+                        </div>
+                        <p class="item-description">Fluffy kulcha stuffed with cheese, onions, or potatoes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category" data-category="desserts">
+                <h2 class="category-title">Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Gulab Jamun with Vanilla Ice Cream</h4>
+                            <span class="price">₹350</span>
+                        </div>
+                        <p class="item-description">Soft gulab jamun served with creamy vanilla ice cream</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Shrikhand Parfait</h4>
+                            <span class="price">₹390</span>
+                        </div>
+                        <p class="item-description">Creamy shrikhand layered with fruits and crunchy nuts</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Classic Brownie Sundae with Ice Cream</h4>
+                            <span class="price">₹390</span>
+                        </div>
+                        <p class="item-description">Fudgy brownie topped with vanilla ice cream and sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Coffee-Infused Rasgulla Tiramisu</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">A fusion of coffee, rasgulla, and tiramisu flavors</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Rose and Pistachio Tres Leches</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">A moist tres leches cake with rose and pistachio essence</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Crispy Phyllo-Encased Rasmalai</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Delicate rasmalai wrapped in crispy phyllo pastry</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Triton Special Baklava with Anjeer Ice Cream</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Flaky baklava paired with fig-infused ice cream</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Asian -->
+            <div class="menu-category" data-category="asian">
+                <h2 class="category-title">Dim Sum</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Chilli Garlic Edamame</h4>
+                            <span class="price">₹530</span>
+                        </div>
+                        <p class="item-description">Spicy edamame tossed in aromatic chilli garlic sauce</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Lotus Stem</h4>
+                            <span class="price">₹530</span>
+                        </div>
+                        <p class="item-description">Steamed lotus stem dim sums filled with delicate seasonings</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Daikon Peking</h4>
+                            <span class="price">₹530</span>
+                        </div>
+                        <p class="item-description">Daikon stuffed dim sums with a rich Peking-style filling</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Cheese</h4>
+                            <span class="price">₹550</span>
+                        </div>
+                        <p class="item-description">Luxurious truffle-infused cheese in delicate dim sums</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Dim Sum Platter</h4>
+                            <span class="price">₹750</span>
+                        </div>
+                        <p class="item-description">A medley of assorted dim sums, delicately steamed to perfection</p>
+                    </div>
+                </div>
+
+                <h2 class="category-title">Sushi</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Asparagus Cream Cheese</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Fresh asparagus wrapped in sushi rice and creamy cheese</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tempura Fire Roll</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Tempura vegetables with a spicy kick in a crisp roll</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Shiitake Taki Roll</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Shiitake mushrooms and spices wrapped in a perfect roll</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Edamame Cucumber</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Truffle-infused edamame and cucumber in a fresh sushi roll</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Sushi Platter</h4>
+                            <span class="price">₹910</span>
+                        </div>
+                        <p class="item-description">A selection of exquisite sushi rolls, bursting with flavours</p>
+                    </div>
+                </div>
+
+                <h2 class="category-title">Bowls & Rice</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Stir fry Udon</h4>
+                            <span class="price">₹610</span>
+                        </div>
+                        <p class="item-description">Udon noodles stir-fried with fresh vegetables and spices</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Stone Bowl Ramen</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Hearty served ramen in a sizzling stone bowl for depth of flavours</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Burnt Garlic Rice with Cottage Cheese Curry</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                        <p class="item-description">Fragrant rice paired with spicy cottage cheese curry</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Specials -->
+            <div class="menu-category" data-category="all">
+                <h2 class="category-title">Global Specials</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Loaded Nachos</h4>
+                            <span class="price">₹550</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Classic Hummus</h4>
+                            <span class="price">₹350</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Tirokafteri</h4>
+                            <span class="price">₹350</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Baba Ganoush</h4>
+                            <span class="price">₹350</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Falafel</h4>
+                            <span class="price">₹350</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Souvlaki</h4>
+                            <span class="price">₹550</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Falafel Pockets</h4>
+                            <span class="price">₹550</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Assorted Mezze Platter</h4>
+                            <span class="price">₹750</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Crystal Veg Dimsums</h4>
+                            <span class="price">₹450</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Kimchi Cottage Cheese Baos</h4>
+                            <span class="price">₹450</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Spicy Vegetable Sushi</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Avocado Cucumber Uramaki</h4>
+                            <span class="price">₹750</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Hakka Noodles</h4>
+                            <span class="price">₹550</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Schezwan Drunken Noodles</h4>
+                            <span class="price">₹550</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Wok-Tossed Triton Noodles</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Spaghetti in Bolognese Sauce</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Penne in Pesto Sauce</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Spaghetti in Cacio e Pepe Sauce</h4>
+                            <span class="price">₹650</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Classic Pizza</h4>
+                            <span class="price">₹950</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Hot Pizza</h4>
+                            <span class="price">₹1050</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverage Specials -->
+            <div class="menu-category" data-category="beverages">
+                <h2 class="category-title">Beverage Specials</h2>
+                
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Grand Shakes</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Kit Kat Shake</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Banoffee Pie Shake</h4>
+                                <span class="price">₹280</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Lotus Biscoff Shake</h4>
+                                <span class="price">₹300</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Ferrero Rocher Shake</h4>
+                                <span class="price">₹310</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Modern Smoothies</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Blueberry Smoothie</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Strawberry Wild Smoothie</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Kiwi Banana Honey Smoothie</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Mango Go-Go Smoothie</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Triton Special</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Blueberry Moscow Mule</h4>
+                                <span class="price">₹260</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Paloma Fizz</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Malta Mojito</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Matcha Mango</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Coffee Breezer</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Coffee Cherry Cola</h4>
+                                <span class="price">₹250</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Espresso Ginger Ale</h4>
+                                <span class="price">₹270</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Espresso Tonic</h4>
+                                <span class="price">₹290</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Espresso Cranberry</h4>
+                                <span class="price">₹300</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Triton Logo">
+                    <p>Where Mediterranean heritage<br>meets global flavors</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>📞 +91 9510605053</p>
+                    <p>✉️ hello@tritonrestaurant.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><img src="assets/images/facebook-circular-logo.png" alt=""></a>
+                        <a href="https://www.instagram.com/triton.ahmedabad/" aria-label="Instagram"><img src="assets/images/ig_logo-removebg-preview.png" alt=""></a>
+                        <a href="#" aria-label="Twitter"><img src="assets/images/X_logo_2023_(white).png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Triton Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

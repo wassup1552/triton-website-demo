@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Triton Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Triton Logo" class="logo-img">
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Cart Button -->
+            <button class="cart-button" id="cartButton">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="totalAmount">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Place Order</button>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete Your Order</h2>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="customerName">Full Name *</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number *</label>
+                    <input type="tel" id="customerPhone" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email</label>
+                    <input type="email" id="customerEmail">
+                </div>
+                <div class="form-group">
+                    <label for="orderType">Order Type *</label>
+                    <select id="orderType" required>
+                        <option value="dine-in">Dine In</option>
+                        <option value="takeaway">Takeaway</option>
+                        <option value="delivery">Delivery</option>
+                    </select>
+                </div>
+                <div class="form-group" id="addressGroup" style="display: none;">
+                    <label for="deliveryAddress">Delivery Address *</label>
+                    <textarea id="deliveryAddress" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="specialInstructions">Special Instructions</label>
+                    <textarea id="specialInstructions" rows="2"></textarea>
+                </div>
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="orderSummaryItems"></div>
+                    <div class="summary-total">
+                        <span>Total Amount:</span>
+                        <span id="summaryTotal">₹0</span>
+                    </div>
+                </div>
+                <button type="submit" class="submit-order-btn">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1 class="page-title">Our Menu</h1>
+            <p class="page-subtitle">A culinary journey across continents</p>
+        </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <div class="menu-nav-container">
+        <div class="container">
+            <nav class="menu-nav">
+                <button class="menu-nav-btn active" data-category="all">All</button>
+                <button class="menu-nav-btn" data-category="beverages">Beverages</button>
+                <button class="menu-nav-btn" data-category="soups-salads">Soups & Salads</button>
+                <button class="menu-nav-btn" data-category="poee">Poee & Sandwiches</button>
+                <button class="menu-nav-btn" data-category="appetizers">Appetizers</button>
+                <button class="menu-nav-btn" data-category="pizza">Pizza</button>
+                <button class="menu-nav-btn" data-category="pasta">Pasta & Risotto</button>
+                <button class="menu-nav-btn" data-category="indian">Indian Main Course</button>
+                <button class="menu-nav-btn" data-category="biryani">Biryani & Rice</button>
+                <button class="menu-nav-btn" data-category="asian">Asian</button>
+                <button class="menu-nav-btn" data-category="desserts">Desserts</button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            
+            <!-- Beverages -->
+            <div class="menu-category" data-category="beverages">
+                <h2 class="category-title">Beverages</h2>
+                
+                <div class="menu-subcategory">
+                    <h3 class="subcategory-title">Coffee Classics <span>(Hot / Iced)</span></h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Espresso</h4>
+                                <span class="price">₹130</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Espresso" data-price="130" data-category="Beverages">Add to Cart</button>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Americano</h4>
+                                <span class="price">₹180</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Americano" data-price="180" data-category="Beverages">Add to Cart</button>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Cappuccino</h4>
+                                <span class="price">₹200</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Cappuccino" data-price="200" data-category="Beverages">Add to Cart</button>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Latte</h4>
+                                <span class="price">₹210</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Latte" data-price="210" data-category="Beverages">Add to Cart</button>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>Mocha</h4>
+                                <span class="price">₹230</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-name="Mocha" data-price="230" data-category="Beverages">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soups & Salads -->
+            <div class="menu-category" data-category="soups-salads">
+                <h2 class="category-title">Fresh Soups & Salads</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Thai Clear Soup</h4>
+                            <span class="price">₹390</span>
+                        </div>
+                        <p class="item-description">Light, aromatic broth with fresh herbs</p>
+                        <button class="add-to-cart-btn" data-name="Thai Clear Soup" data-price="390" data-category="Soups & Salads">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Lebanese Fattoush Salad</h4>
+                            <span class="price">₹430</span>
+                        </div>
+                        <p class="item-description">Crunchy salad with tangy lemon and herbs</p>
+                        <button class="add-to-cart-btn" data-name="Lebanese Fattoush Salad" data-price="430" data-category="Soups & Salads">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pizza -->
+            <div class="menu-category" data-category="pizza">
+                <h2 class="category-title">Neapolitan Style Pizza</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Classic Margherita</h4>
+                            <span class="price">₹850</span>
+                        </div>
+                        <p class="item-description">Classic with fresh tomatoes, mozzarella, and basil</p>
+                        <button class="add-to-cart-btn" data-name="Classic Margherita" data-price="850" data-category="Pizza">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Truffle Pesto</h4>
+                            <span class="price">₹1050</span>
+                        </div>
+                        <p class="item-description">Truffle oil, pesto, cheese on wood-fired pizza</p>
+                        <button class="add-to-cart-btn" data-name="Truffle Pesto" data-price="1050" data-category="Pizza">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category" data-category="desserts">
+                <h2 class="category-title">Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Gulab Jamun with Vanilla Ice Cream</h4>
+                            <span class="price">₹350</span>
+                        </div>
+                        <p class="item-description">Soft gulab jamun served with creamy vanilla ice cream</p>
+                        <button class="add-to-cart-btn" data-name="Gulab Jamun with Vanilla Ice Cream" data-price="350" data-category="Desserts">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h4>Triton Special Baklava with Anjeer Ice Cream</h4>
+                            <span class="price">₹410</span>
+                        </div>
+                        <p class="item-description">Flaky baklava paired with fig-infused ice cream</p>
+                        <button class="add-to-cart-btn" data-name="Triton Special Baklava with Anjeer Ice Cream" data-price="410" data-category="Desserts">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Triton Logo">
+                    <p>Where Mediterranean heritage<br>meets global flavors</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>📞 +91 9510605053</p>
+                    <p>✉️ hello@tritonrestaurant.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><img src="assets/images/facebook-circular-logo.png" alt=""></a>
+                        <a href="https://www.instagram.com/triton.ahmedabad/" aria-label="Instagram"><img src="assets/images/ig_logo-removebg-preview.png" alt=""></a>
+                        <a href="#" aria-label="Twitter"><img src="assets/images/X_logo_2023_(white).png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Triton Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
